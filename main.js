@@ -7,7 +7,7 @@ form.addEventListener('submit', function(e){
 
     const msgSucesso = `Campos preenchidos corretamente! O número ${cmpoA.value} é menor que o número ${cmpoB.value}. `
 
-    if(cmpoA.value < cmpoB.value){
+    if(parseFloat(cmpoA.value) < parseFloat( cmpoB.value)){
         const containerMensagemSucesso = document.getElementById('sucesso-mensagem');
         containerMensagemSucesso.innerHTML = msgSucesso;
         containerMensagemSucesso.style.display = 'block';
@@ -23,11 +23,11 @@ form.addEventListener('submit', function(e){
 n2.addEventListener('keyup', function(e) {
     console.log(e.target.value)
 
-    if (cmpoA.value > cmpoB.value) {
-        n2.classList.add('erro')
+    if (parseFloat(cmpoA.value) < parseFloat( cmpoB.value)) {
+        n2.classList.add('erro-mensagem')
         document.getElementById('erro-mensagem').style.display = 'block';
     } else {
-        n2.classList.remove('erro')
+        n2.classList.remove('erro-mensagem')
         document.getElementById('erro-mensagem').style.display = 'none';
     }
 });
